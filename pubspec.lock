@@ -244,8 +244,17 @@ packages:
     description:
       path: "."
       ref: develop
-      resolved-ref: "1ff45936e3a0252300f14b2101fb0b7b53a3e6e8"
+      resolved-ref: "850538854387c464200f6d547707dfdb2a7fb065"
       url: "https://github.com/DanhDue/d3f_dependency_manager.git"
+    source: git
+    version: "1.0.0+1"
+  d3f_shared:
+    dependency: transitive
+    description:
+      path: "."
+      ref: develop
+      resolved-ref: "78d0463e97fcde30952707452e7258a2aa936948"
+      url: "https://github.com/DanhDue/d3f_shared.git"
     source: git
     version: "1.0.0+1"
   dart_style:
