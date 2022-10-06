@@ -48,6 +48,6 @@ app.*.symbols
 # Obfuscation related
 app.*.map.json
 
-*.g.dart
-*.freezed.dart
-/lib/generated
+#*.g.dart
+#*.freezed.dart
+#/lib/generated

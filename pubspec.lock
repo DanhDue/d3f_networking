@@ -175,7 +175,7 @@ packages:
       name: connectivity_plus
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.3.7"
+    version: "2.3.8"
   connectivity_plus_linux:
     dependency: transitive
     description:
@@ -189,7 +189,7 @@ packages:
       name: connectivity_plus_macos
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.2.4"
+    version: "1.2.6"
   connectivity_plus_platform_interface:
     dependency: transitive
     description:
@@ -239,13 +239,40 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "1.0.5"
+  d3f_core:
+    dependency: transitive
+    description:
+      path: "."
+      ref: develop
+      resolved-ref: "9ef93b83e77cfc2900a3312e350be593c02843a7"
+      url: "https://github.com/DanhDue/d3f_core.git"
+    source: git
+    version: "1.0.0+1"
   d3f_dependency_manager:
     dependency: "direct main"
     description:
       path: "."
       ref: develop
-      resolved-ref: "850538854387c464200f6d547707dfdb2a7fb065"
+      resolved-ref: "11d6a9a78dabbada46357cc1034b72100a1e2271"
       url: "https://github.com/DanhDue/d3f_dependency_manager.git"
+    source: git
+    version: "1.0.0+1"
+  d3f_inapp_purchase:
+    dependency: transitive
+    description:
+      path: "."
+      ref: develop
+      resolved-ref: ecafbb1f97f920941937b7f3a2ddc23dc88d5773
+      url: "https://github.com/DanhDue/d3f_inapp_purchase.git"
+    source: git
+    version: "1.0.0+1"
+  d3f_login:
+    dependency: transitive
+    description:
+      path: "."
+      ref: develop
+      resolved-ref: d72e98ed7d3c3a86ae9870370fc567433b56a31d
+      url: "https://github.com/DanhDue/d3f_login.git"
     source: git
     version: "1.0.0+1"
   d3f_shared:
@@ -253,7 +280,7 @@ packages:
     description:
       path: "."
       ref: develop
-      resolved-ref: "78d0463e97fcde30952707452e7258a2aa936948"
+      resolved-ref: "17d08248808b6e3457e0a38676e9fd8cc7099e14"
       url: "https://github.com/DanhDue/d3f_shared.git"
     source: git
     version: "1.0.0+1"
@@ -278,6 +305,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "4.0.6"
+  equatable:
+    dependency: transitive
+    description:
+      name: equatable
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "2.0.5"
   fake_async:
     dependency: transitive
     description:
@@ -447,6 +481,13 @@ packages:
       url: "https://pub.dartlang.org"
     source: hosted
     version: "2.1.3"
+  get:
+    dependency: transitive
+    description:
+      name: get
+      url: "https://pub.dartlang.org"
+    source: hosted
+    version: "4.6.5"
   glob:
     dependency: transitive
     description:
@@ -572,7 +613,7 @@ packages:
       name: logging
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "1.0.2"
+    version: "1.1.0"
   lottie:
     dependency: transitive
     description:
@@ -815,7 +856,7 @@ packages:
       name: stream_transform
       url: "https://pub.dartlang.org"
     source: hosted
-    version: "2.0.0"
+    version: "2.0.1"
   string_scanner:
     dependency: transitive
     description:
@@ -922,5 +963,5 @@ packages:
     source: hosted
     version: "3.1.1"
 sdks:
-  dart: ">=2.18.0 <3.0.0"
+  dart: ">=2.18.2 <3.0.0"
   flutter: ">=3.3.0"
