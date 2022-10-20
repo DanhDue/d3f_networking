@@ -268,49 +268,39 @@ packages:
     source: hosted
     version: "1.0.5"
   d3f_core:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
-      path: "."
-      ref: develop
-      resolved-ref: "2f480047d7d03a62e19fb529c28c1a76dfa54ae4"
-      url: "https://github.com/DanhDue-ExOICTIF/d3f_core.git"
-    source: git
+      path: "../d3f_core"
+      relative: true
+    source: path
     version: "1.0.0+1"
   d3f_dependency_manager:
     dependency: "direct main"
     description:
-      path: "."
-      ref: develop
-      resolved-ref: dd11b38e893107c7de1933452252f7973b0f3e1d
-      url: "https://github.com/DanhDue-ExOICTIF/d3f_dependency_manager.git"
-    source: git
+      path: "../d3f_dependency_manager"
+      relative: true
+    source: path
     version: "1.0.0+1"
   d3f_inapp_purchase:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
-      path: "."
-      ref: develop
-      resolved-ref: deb37ed81a6f6c10a3dadca7c87cf8d9f5718fcf
-      url: "https://github.com/DanhDue-ExOICTIF/d3f_inapp_purchase.git"
-    source: git
+      path: "../d3f_inapp_purchase"
+      relative: true
+    source: path
     version: "1.0.0+1"
   d3f_login:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
-      path: "."
-      ref: develop
-      resolved-ref: a3ed2638945697fe8713e84717d70ee9e5c5e8ae
-      url: "https://github.com/DanhDue-ExOICTIF/d3f_login.git"
-    source: git
+      path: "../d3f_login"
+      relative: true
+    source: path
     version: "1.0.0+1"
   d3f_shared:
-    dependency: transitive
+    dependency: "direct overridden"
     description:
-      path: "."
-      ref: develop
-      resolved-ref: "84b5e9a402e901e531d3c172ee3c6358fcb6128f"
-      url: "https://github.com/DanhDue-ExOICTIF/d3f_shared.git"
-    source: git
+      path: "../d3f_shared"
+      relative: true
+    source: path
     version: "1.0.0+1"
   dart_style:
     dependency: transitive
@@ -1089,5 +1079,5 @@ packages:
     source: hosted
     version: "3.1.1"
 sdks:
-  dart: ">=2.18.2 <3.0.0"
+  dart: ">=2.18.0 <3.0.0"
   flutter: ">=3.3.0"
