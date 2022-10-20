@@ -3,7 +3,6 @@ import 'dart:async';
 import 'package:d3f_core/app/app_configurations.dart';
 import 'package:d3f_core/data/repositories/app_configurations_repository.dart';
 import 'package:d3f_networking/bean/refresh_token_response.dart';
-import 'package:d3f_networking/layers/network_executor.dart';
 import 'package:d3f_networking/network_options.dart';
 import 'package:dio/dio.dart';
 import 'package:fimber/fimber.dart';
@@ -11,7 +10,6 @@ import 'package:flutter/foundation.dart';
 import 'package:get/get_connect/http/src/status/http_status.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_instance/get_instance.dart';
-import 'package:get/get_navigation/get_navigation.dart';
 import 'package:http_mock_adapter/http_mock_adapter.dart';
 
 import '../interfaces/base_client_generator.dart';
@@ -22,13 +20,13 @@ class NetworkCreator {
   AppConfigurations? _appConfigs;
   final _appConfigRepo = Get.find<AppConfigurationsRepository>();
 
-  /// MOCK HTTP RESPONSE for the testing.
+  /// MOCK HTTP RESPONSE for the testing.Ò
   DioAdapter? dioAdapter;
 
   Future<Response> request(
       {required BaseClientGenerator route,
-        NetworkOptions? options,
-        bool? tokenRefreshing = false}) async {
+      NetworkOptions? options,
+      bool? tokenRefreshing = false}) async {
     /// Load configurations
     _appConfigs = await _appConfigRepo.retrieveAppConfigurations();
 
@@ -62,7 +60,7 @@ class NetworkCreator {
       });
       dioAdapter?.onGet('price?symbol=SXPBTC', (server) {
         server.reply(
-          // (tokenRefreshing == true) ? HttpStatus.ok : HttpStatus.unauthorized,
+            // (tokenRefreshing == true) ? HttpStatus.ok : HttpStatus.unauthorized,
             HttpStatus.ok,
             {
               'status': 'DanhDue ExOICTIF',
@@ -73,7 +71,10 @@ class NetworkCreator {
                 'next': '/delegates/gym/blocks?page=2&limit=100&transform=true',
                 'previous': null
               },
-              'data': [{'symbol': 'SXPBTC', 'price': '1.568'}, {'symbol': 'SXPBTC', 'price': '1.568'}]
+              'data': [
+                {'symbol': 'SXPBTC', 'price': '1.568'},
+                {'symbol': 'SXPBTC', 'price': '1.568'}
+              ]
             });
       });
       dioAdapter?.onPost('refresh', (server) {
@@ -103,7 +104,7 @@ class NetworkCreator {
 
   dynamic requestInterceptor(
       {required RequestOptions options,
-        required RequestInterceptorHandler handler}) async {
+      required RequestInterceptorHandler handler}) async {
     if (_appConfigs?.accessToken != null) {
       options.headers
           .addAll({"Authorization": "Bearer ${_appConfigs?.accessToken}"});
@@ -113,14 +114,14 @@ class NetworkCreator {
 
   dynamic refreshTokenInterceptor(
       {required DioError error,
-        required ErrorInterceptorHandler handler,
-        required BaseClientGenerator route,
-        NetworkOptions? options}) async {
+      required ErrorInterceptorHandler handler,
+      required BaseClientGenerator route,
+      NetworkOptions? options}) async {
     if (error.response?.statusCode == HttpStatus.forbidden ||
         error.response?.statusCode == HttpStatus.unauthorized) {
       await refreshToken();
       final _response =
-      await request(route: route, options: options, tokenRefreshing: true);
+          await request(route: route, options: options, tokenRefreshing: true);
       handler.resolve(_response);
       return;
     }
@@ -143,11 +144,11 @@ class NetworkCreator {
       // Get.toNamed(AppLinks.login);
     } else {
       _appConfigs = _appConfigs?.copyWith(
-          refreshToken: _tokenResponse?.refreshToken,
-          accessToken: _tokenResponse?.accessToken) ??
+              refreshToken: _tokenResponse.refreshToken,
+              accessToken: _tokenResponse.accessToken) ??
           AppConfigurations(
-              refreshToken: _tokenResponse?.refreshToken,
-              accessToken: _tokenResponse?.accessToken);
+              refreshToken: _tokenResponse.refreshToken,
+              accessToken: _tokenResponse.accessToken);
       await _appConfigRepo.saveAppConfigurations(_appConfigs);
     }
   }
