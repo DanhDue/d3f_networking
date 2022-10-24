@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:equatable/equatable.dart';
 import 'package:fimber/fimber.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -15,15 +17,15 @@ class BaseResponseObject<T> extends Equatable {
   const BaseResponseObject({this.status, this.message, this.data});
 
   factory BaseResponseObject.fromJson(
-      Map<String, dynamic> json,
-      T Function(Object? json) fromJsonT,
-      ) {
+    Map<String, dynamic> json,
+    T Function(Object? json) fromJsonT,
+  ) {
     return _$BaseResponseObjectFromJson<T>(json, fromJsonT);
   }
 
   Map<String, dynamic> toJson(
-      Map<String, dynamic> Function(T value) toJsonT,
-      ) {
+    Map<String, dynamic> Function(T value) toJsonT,
+  ) {
     return _$BaseResponseObjectToJson<T>(this, toJsonT);
   }
 

@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:dio/dio.dart';
 import 'package:freezed_annotation/freezed_annotation.dart';
 
@@ -8,7 +10,7 @@ class NetworkError with _$NetworkError implements Exception {
   const NetworkError._() : super();
 
   const factory NetworkError.request({required DioError error}) =
-  _ResponseError;
+      _ResponseError;
 
   const factory NetworkError.type({String? error}) = _DecodingError;
 

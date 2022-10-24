@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:d3f_networking/network_error.dart';
 import 'package:d3f_networking/network_options.dart';
 import 'package:dio/dio.dart';
@@ -16,15 +18,15 @@ import 'network_decoder.dart';
 class NetworkExecutor {
   static Future<Result<K, NetworkError>> execute<T, K>(
       {required BaseClientGenerator route,
-        required T responseType,
-        NetworkOptions? options}) async {
+      required T responseType,
+      NetworkOptions? options}) async {
     Fimber.d(route.toString());
 
     // Check Network Connectivity
     if (await NetworkConnectivity.status) {
       try {
         var response =
-        await NetworkCreator.shared.request(route: route, options: options);
+            await NetworkCreator.shared.request(route: route, options: options);
         var data = NetworkDecoder.shared
             .decode<T, K>(response: response, responseType: responseType);
 
