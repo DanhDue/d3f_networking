@@ -1,3 +1,5 @@
+// ignore_for_file: depend_on_referenced_packages
+
 import 'package:d3f_networking/interfaces/base_response_object.dart';
 import 'package:dio/dio.dart';
 import 'package:fimber/fimber.dart';
@@ -12,7 +14,7 @@ class NetworkDecoder {
         var list = response.data as List;
         var dataList = List<T>.from(list
             .map((item) =>
-            (responseType as BaseResponseObject?)?.decodeJson(item))
+                (responseType as BaseResponseObject?)?.decodeJson(item))
             .toList()) as K;
         return dataList;
       } else {
