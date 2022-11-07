@@ -13,6 +13,9 @@ BaseResponseObject<T> _$BaseResponseObjectFromJson<T>(
     BaseResponseObject<T>(
       status: json['status'] as String?,
       message: json['message'] as String?,
+      meta: json['meta'] == null
+          ? null
+          : Meta.fromJson(json['meta'] as Map<String, dynamic>),
       data: _$nullableGenericFromJson(json['data'], fromJsonT),
     );
 
@@ -23,6 +26,7 @@ Map<String, dynamic> _$BaseResponseObjectToJson<T>(
     <String, dynamic>{
       'status': instance.status,
       'message': instance.message,
+      'meta': instance.meta,
       'data': _$nullableGenericToJson(instance.data, toJsonT),
     };
 

@@ -29,6 +29,7 @@ dependencies:
     git:
       url: https://github.com/DanhDue-ExOICTIF/d3f_dependency_manager.git
       ref: develop
+  retrofit: ^3.3.1
 
 dev_dependencies:
   flutter_test:
@@ -39,6 +40,7 @@ dev_dependencies:
   json_serializable: ^6.4.1
   hive_generator: ^1.1.3
   freezed: ^2.1.0+1
+  retrofit_generator: ^4.2.0
 
 #dependency_overrides:
 #  d3f_shared:

@@ -30,7 +30,7 @@ class NetworkExecutor {
         var data = NetworkDecoder.shared
             .decode<T, K>(response: response, responseType: responseType);
 
-        /// handle errors follow by base response's status
+        // handle errors follow by base response's status
         // if((data as BaseResponseObject?)?.status == 'status') {
         //   return Result.success(data);
         //   return const Result.failure(NetworkError.type(error: 'custom response follow by the base response\'s status'));

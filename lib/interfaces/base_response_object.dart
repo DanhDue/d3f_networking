@@ -1,5 +1,6 @@
 // ignore_for_file: depend_on_referenced_packages
 
+import 'package:d3f_networking/bean/meta.dart';
 import 'package:equatable/equatable.dart';
 import 'package:fimber/fimber.dart';
 import 'package:json_annotation/json_annotation.dart';
@@ -10,11 +11,10 @@ part 'base_response_object.g.dart';
 class BaseResponseObject<T> extends Equatable {
   final String? status;
   final String? message;
-  // final Meta? meta;
+  final Meta? meta;
   final T? data;
 
-  // const BaseResponseObject({this.status, this.message, this.meta, this.data});
-  const BaseResponseObject({this.status, this.message, this.data});
+  const BaseResponseObject({this.status, this.message, this.meta, this.data});
 
   factory BaseResponseObject.fromJson(
     Map<String, dynamic> json,
@@ -30,25 +30,16 @@ class BaseResponseObject<T> extends Equatable {
   }
 
   @override
-  // List<Object?> get props => [status, message, meta, data];
-  List<Object?> get props => [status, message, data];
+  List<Object?> get props => [status, message, meta, data];
 }
 
 extension NetworkResponseConverter on BaseResponseObject {
   BaseResponseObject? decodeJson(Map<String, dynamic> json) {
-    // if (this is BaseResponseObject<BlockChain>) {
-    //   return BaseResponseObject<BlockChain>.fromJson(
-    //       json, BlockChain.fromJsonObject);
-    // }
     Fimber.e('You need to implement the decodeJson method');
     return null;
   }
 
   Map<String, dynamic>? encodeJson() {
-    // if (this is BlockChain) {
-    //   return (this as BaseResponseObject<BlockChain>?)
-    //       ?.toJson((value) => value.toJson());
-    // }
     Fimber.e('You need to implement the encodeJson method');
     return null;
   }
