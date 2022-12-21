@@ -36,8 +36,8 @@ mixin _$RefreshTokenResponse {
 
 /// @nodoc
 abstract class $RefreshTokenResponseCopyWith<$Res> {
-  factory $RefreshTokenResponseCopyWith(RefreshTokenResponse value,
-          $Res Function(RefreshTokenResponse) then) =
+  factory $RefreshTokenResponseCopyWith(
+          RefreshTokenResponse value, $Res Function(RefreshTokenResponse) then) =
       _$RefreshTokenResponseCopyWithImpl<$Res>;
   $Res call(
       {@JsonKey(name: 'access_token') String? accessToken,
@@ -47,8 +47,7 @@ abstract class $RefreshTokenResponseCopyWith<$Res> {
 }
 
 /// @nodoc
-class _$RefreshTokenResponseCopyWithImpl<$Res>
-    implements $RefreshTokenResponseCopyWith<$Res> {
+class _$RefreshTokenResponseCopyWithImpl<$Res> implements $RefreshTokenResponseCopyWith<$Res> {
   _$RefreshTokenResponseCopyWithImpl(this._value, this._then);
 
   final RefreshTokenResponse _value;
@@ -86,8 +85,8 @@ class _$RefreshTokenResponseCopyWithImpl<$Res>
 /// @nodoc
 abstract class _$$_RefreshTokenResponseCopyWith<$Res>
     implements $RefreshTokenResponseCopyWith<$Res> {
-  factory _$$_RefreshTokenResponseCopyWith(_$_RefreshTokenResponse value,
-          $Res Function(_$_RefreshTokenResponse) then) =
+  factory _$$_RefreshTokenResponseCopyWith(
+          _$_RefreshTokenResponse value, $Res Function(_$_RefreshTokenResponse) then) =
       __$$_RefreshTokenResponseCopyWithImpl<$Res>;
   @override
   $Res call(
@@ -98,11 +97,10 @@ abstract class _$$_RefreshTokenResponseCopyWith<$Res>
 }
 
 /// @nodoc
-class __$$_RefreshTokenResponseCopyWithImpl<$Res>
-    extends _$RefreshTokenResponseCopyWithImpl<$Res>
+class __$$_RefreshTokenResponseCopyWithImpl<$Res> extends _$RefreshTokenResponseCopyWithImpl<$Res>
     implements _$$_RefreshTokenResponseCopyWith<$Res> {
-  __$$_RefreshTokenResponseCopyWithImpl(_$_RefreshTokenResponse _value,
-      $Res Function(_$_RefreshTokenResponse) _then)
+  __$$_RefreshTokenResponseCopyWithImpl(
+      _$_RefreshTokenResponse _value, $Res Function(_$_RefreshTokenResponse) _then)
       : super(_value, (v) => _then(v as _$_RefreshTokenResponse));
 
   @override
@@ -170,10 +168,8 @@ class _$_RefreshTokenResponse implements _RefreshTokenResponse {
     return identical(this, other) ||
         (other.runtimeType == runtimeType &&
             other is _$_RefreshTokenResponse &&
-            const DeepCollectionEquality()
-                .equals(other.accessToken, accessToken) &&
-            const DeepCollectionEquality()
-                .equals(other.refreshToken, refreshToken) &&
+            const DeepCollectionEquality().equals(other.accessToken, accessToken) &&
+            const DeepCollectionEquality().equals(other.refreshToken, refreshToken) &&
             const DeepCollectionEquality().equals(other.tokenType, tokenType) &&
             const DeepCollectionEquality().equals(other.expires, expires));
   }
@@ -190,8 +186,7 @@ class _$_RefreshTokenResponse implements _RefreshTokenResponse {
   @JsonKey(ignore: true)
   @override
   _$$_RefreshTokenResponseCopyWith<_$_RefreshTokenResponse> get copyWith =>
-      __$$_RefreshTokenResponseCopyWithImpl<_$_RefreshTokenResponse>(
-          this, _$identity);
+      __$$_RefreshTokenResponseCopyWithImpl<_$_RefreshTokenResponse>(this, _$identity);
 
   @override
   Map<String, dynamic> toJson() {

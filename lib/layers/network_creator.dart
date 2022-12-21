@@ -34,18 +34,16 @@ class NetworkCreator {
 
     /// Add interceptor to refresh token: START !!!.
     _client.interceptors.add(InterceptorsWrapper(
-      onRequest: (options, handler) =>
-          requestInterceptor(options: options, handler: handler),
-      onError: (error, handler) => refreshTokenInterceptor(
-          error: error, handler: handler, route: route, options: options),
+      onRequest: (options, handler) => requestInterceptor(options: options, handler: handler),
+      onError: (error, handler) =>
+          refreshTokenInterceptor(error: error, handler: handler, route: route, options: options),
     ));
 
     /// Add interceptor to refresh token: END !!!.
 
     /// Test for the token refreshing: START !!!
     if (kDebugMode) {
-      dioAdapter = DioAdapter(
-          dio: _client, matcher: const UrlRequestMatcher(matchMethod: true));
+      dioAdapter = DioAdapter(dio: _client, matcher: const UrlRequestMatcher(matchMethod: true));
       _client.httpClientAdapter = dioAdapter as HttpClientAdapter;
       dioAdapter?.onGet('price?symbol=SXPUSDT', (server) {
         server.reply(200, {
@@ -100,16 +98,14 @@ class NetworkCreator {
         sendTimeout: route.sendTimeout,
         receiveTimeout: route.sendTimeout,
         onReceiveProgress: options?.onReceiveProgress,
-        validateStatus: (statusCode) => (statusCode! >= HttpStatus.ok &&
-            statusCode <= HttpStatus.multipleChoices)));
+        validateStatus: (statusCode) =>
+            (statusCode! >= HttpStatus.ok && statusCode <= HttpStatus.multipleChoices)));
   }
 
   dynamic requestInterceptor(
-      {required RequestOptions options,
-      required RequestInterceptorHandler handler}) async {
+      {required RequestOptions options, required RequestInterceptorHandler handler}) async {
     if (_appConfigs?.accessToken != null) {
-      options.headers
-          .addAll({"Authorization": "Bearer ${_appConfigs?.accessToken}"});
+      options.headers.addAll({"Authorization": "Bearer ${_appConfigs?.accessToken}"});
     }
     handler.next(options);
   }
@@ -122,8 +118,7 @@ class NetworkCreator {
     if (error.response?.statusCode == HttpStatus.forbidden ||
         error.response?.statusCode == HttpStatus.unauthorized) {
       await refreshToken();
-      final _response =
-          await request(route: route, options: options, tokenRefreshing: true);
+      final _response = await request(route: route, options: options, tokenRefreshing: true);
       handler.resolve(_response);
       return;
     }
@@ -149,8 +144,7 @@ class NetworkCreator {
               refreshToken: _tokenResponse.refreshToken,
               accessToken: _tokenResponse.accessToken) ??
           AppConfigurations(
-              refreshToken: _tokenResponse.refreshToken,
-              accessToken: _tokenResponse.accessToken);
+              refreshToken: _tokenResponse.refreshToken, accessToken: _tokenResponse.accessToken);
       await _appConfigRepo.saveAppConfigurations(_appConfigs);
     }
   }
